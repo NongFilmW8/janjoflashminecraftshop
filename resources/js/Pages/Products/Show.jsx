@@ -12,7 +12,8 @@ export default function Show({ product }) {
     const closeModal = () => {
         setShowGif(false);
     };
-
+    
+// แสดงชื่อสินค้าตรง nav bar
     return (
         <AuthenticatedLayout
             header={
@@ -21,7 +22,7 @@ export default function Show({ product }) {
                 </h2>
             }
         >
-            <Head title={`Product: ${product.name}`} />
+            <Head title={product.name} />
 
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -34,6 +35,7 @@ export default function Show({ product }) {
                                     className="w-full h-auto mb-4 rounded"
                                 />
                             )}
+
                             <p className="text-gray-600 text-lg mb-4">
                                 {product.description.split('\n').map((line, index) => (
                                     <span key={index}>
