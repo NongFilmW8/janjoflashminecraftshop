@@ -21,14 +21,26 @@ export default function Show({ product }) {
                 </h2>
             }
         >
-            <Head title={product.name} />
+            <Head title={`Product: ${product.name}`} />
 
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                         <div className="p-6">
-                            <img src={`/storage/${product.image}`} alt={product.name} className="w-full h-64 object-cover" />
-                            <p className="mt-4 text-gray-700">{product.description}</p>
+                            {product.image && (
+                                <img
+                                    src={product.image}
+                                    alt={product.name}
+                                    className="w-full h-auto mb-4 rounded"
+                                />
+                            )}
+                            <p className="text-gray-600 text-lg mb-4">
+                                {product.description.split('\n').map((line, index) => (
+                                    <span key={index}>
+                                        {line}<br />
+                                    </span>
+                                ))}
+                            </p>
                             <p className="mt-2 text-lg font-semibold">Price: ${product.price}</p>
 
                             <div className="mt-4 flex space-x-2">

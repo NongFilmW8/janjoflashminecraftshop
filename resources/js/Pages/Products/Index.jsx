@@ -22,8 +22,8 @@ export default function Index({ products }) {
                                         key={product.id}
                                         className="bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow border-2 border-green-500"
                                     >
-                                        {/* ��สดงรูปภาพในหน้าสินค้า */}
-                                        <img src={`/storage/${product.image}`} alt={product.name} className="w-full h-32 object-cover" />
+                                        {/* แสดงรูปภาพสินค้า */}
+                                        <img src={product.image} alt={product.name} className="w-full h-32 object-cover mb-2" />
                                         <h2 className="text-xl font-semibold text-gray-700">
                                             {product.name}
                                         </h2>

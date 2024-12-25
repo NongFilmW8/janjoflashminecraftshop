@@ -34,5 +34,7 @@ Route::get('/products', [ProductController::class, 'index'])->name('products.ind
 Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
 Route::post('/products', [ProductController::class, 'store'])->name('products.store');
 Route::get('/products/buy/{id}', [ProductController::class, 'buy'])->name('products.buy');
+  Route::resource('products', ProductController::class);
+  
 //เพิ่มbuyid
 require __DIR__.'/auth.php';

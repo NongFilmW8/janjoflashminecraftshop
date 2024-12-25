@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Diamond Sword',
             'price' => 99.99,
             'description' => 'A powerful sword made of diamond',
-            'image' => 'images/diamond_sword.jpg'
+            'image' => 'minecraft-1-logo-pack/NormalID.png'
         ]);
 
         \App\Models\Product::create([

@@ -9,26 +9,29 @@ use App\Models\Product;
 class ProductController extends Controller
 {
     private $products = [
-        ['id' => 1, 'name' => 'Normal ID',
-        'description' => '✅ สามารถเปลี่ยนข้อมูลได้ทั้งหมด
-✅ ทางร้านขายยกเมล หมดกังวลเรื่องไอดีโดนดึงคืน
-✅ เป็นไอดีที่ Migrate เป็น Microsoft account แล้ว ซึ่งมีความปลอดภัยสูง
-✅ สามารถเปลี่ยนอีเมลได้ทันที (ขายยกเมล)
-✅ สามารถเข้าเล่นในเซิฟ HYPIXEL',
-'price' => 1500,
-'image' => 'images/laptop.jpg'],
-        ['id' => 2, 'name' => 'Smartphone',
+        ['id' => 1, 'Normal ID' => 'Normal ID',
+         'description' => "✅ สามารถเปลี่ยนข้อมูลได้ทั้งหมด\n" .
+                         "✅ ทางร้านขายยกเมล หมดกังวลเรื่องไอดีโดนดึงคืน\n" .
+                         "✅ เป็นไอดีที่ Migrate เป็น Microsoft account แล้ว ซึ่งมีความปลอดภัยสูง\n" .
+                         "✅ สามารถเปลี่ยนอีเมลได้ทันที (ขายยกเมล)\n" .
+                         "✅ สามารถเข้าเล่นในเซิฟ HYPIXEL",
+         'price' => 1500,
+         'image' => 'https://media.discordapp.net/attachments/1321335591836717107/1321335987909165087/NormalID.png?ex=676cdd88&is=676b8c08&hm=8a62b59675461187a19f6f21d737a63d94679fbd1a10a69e0cb7112ee0aebe3f&=&format=webp&quality=lossless&width=936&height=936'],
+        ['id' => 2, 'Cape' => 'ผ้าคลุม',
         'description' => 'Latest smartphone with great features',
         'price' => 800,
-        'image' => 'images/smartphone.jpg'],
+        'image' => 'https://media.discordapp.net/attachments/1321335591836717107/1321340307937169440/LF75IBoGiLVBcVaYMQdSyQVU2wmZQRjI_-_VanillaMigrator.png?ex=676ce18e&is=676b900e&hm=65bfc6d1045c91b086cd0fecc2e065077050c406963b8b6a2d727a25c882a7e4&=&format=webp&quality=lossless&width=936&height=936'],
+
         ['id' => 3, 'name' => 'Tablet',
         'description' => 'Portable tablet for everyday use',
         'price' => 500,
         'image' => 'images/tablet.jpg'],
         ['id' => 4, 'name' => 'Diamond Sword',
         'description' => 'A powerful sword made of diamond',
+
         'price' => 99.99,
         'image' => 'images/diamond_sword.jpg'],
+
         ['id' => 5, 'name' => 'Iron Pickaxe',
         'description' => 'Durable mining tool',
         'price' => 49.99,
@@ -105,7 +108,6 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
         $product = collect($this->products)->firstWhere('id', $id);
         if (!$product) {
             abort(404, 'Product not found');
