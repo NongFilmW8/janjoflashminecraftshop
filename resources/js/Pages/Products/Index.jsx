@@ -26,7 +26,7 @@ export default function Index({ products }) {
                                         <h2 className="text-xl font-semibold text-gray-700">
                                             {product.name}
                                         </h2>
-                                        <p className="text-gray-500 mt-2">Price: ${product.price}</p>
+                                        <p className="text-gray-500 mt-2">Price: ฿{product.price}</p>
                                         <Link
                                             href={`/products/${product.id}`}
                                             className="inline-block mt-4 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"

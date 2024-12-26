@@ -16,7 +16,7 @@ class ProductController extends Controller
                          "✅ สามารถเปลี่ยนอีเมลได้ทันที (ขายยกเมล)\n" .
                          "✅ สามารถเข้าเล่นในเซิฟ HYPIXEL",
          'price' => 1500,
-         'image' => 'https://media.discordapp.net/attachments/1321335591836717107/1321335987909165087/NormalID.png?ex=676cdd88&is=676b8c08&hm=8a62b59675461187a19f6f21d737a63d94679fbd1a10a69e0cb7112ee0aebe3f&=&format=webp&quality=lossless&width=936&height=936'],
+         'image' => 'https://media.discordapp.net/attachments/1321335591836717107/1321335987909165087/NormalID.png?ex=676d8648&is=676c34c8&hm=4108edb79301a9237d5594e6107260ad02eee933ff613192f4d0070345a2f904&=&format=webp&quality=lossless&width=936&height=936'],
         ['id' => 2, 'name' => 'Cape',
          'description' => "✅ สามารถเปลี่ยนข้อมูลได้ทั้งหมด\n" .
                          "✅ ทางร้านขายยกเมล หมดกังวลเรื่องไอดีโดนดึงคืน\n" .

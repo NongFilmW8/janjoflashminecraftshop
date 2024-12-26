@@ -12,7 +12,7 @@ export default function Show({ product }) {
     const closeModal = () => {
         setShowGif(false);
     };
-    
+
 // แสดงชื่อสินค้าตรง nav bar
     return (
         <AuthenticatedLayout
