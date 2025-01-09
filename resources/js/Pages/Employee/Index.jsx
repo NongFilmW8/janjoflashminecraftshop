@@ -24,7 +24,7 @@ export default function Index({ employees, query }) {
         <AuthenticatedLayout
             header={
                 <h2 className="text-xl font-semibold leading-tight text-gray-800">
-                    Employee List
+                    Minecraft Member List
                 </h2>
             }
         >
@@ -39,7 +39,7 @@ export default function Index({ employees, query }) {
                                 type="text"
                                 value={search}
                                 onChange={(e) => setSearch(e.target.value)}
-                                placeholder="Search employees..."
+                                placeholder="Search Minecraft Member..."
                                 className="w-full px-4 py-2 border-2 border-green-800 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
                             />
                             <button
