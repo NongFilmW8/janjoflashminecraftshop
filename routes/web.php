@@ -2,6 +2,7 @@
 use App\Http\Controllers\ChirpController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\EmployeeController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -34,7 +35,6 @@ Route::get('/products', [ProductController::class, 'index'])->name('products.ind
 Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
 Route::post('/products', [ProductController::class, 'store'])->name('products.store');
 Route::get('/products/buy/{id}', [ProductController::class, 'buy'])->name('products.buy');
-  Route::resource('products', ProductController::class);
-  
-//เพิ่มbuyid
+Route::resource('products', ProductController::class);
+Route::get('/employees', [EmployeeController::class, 'index'])->name('employees.index');
 require __DIR__.'/auth.php';
