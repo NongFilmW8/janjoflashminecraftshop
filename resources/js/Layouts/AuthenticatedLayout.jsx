@@ -28,14 +28,12 @@ export default function AuthenticatedLayout({ header, children }) {
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-
                                 <NavLink
                                     href={route('dashboard')}
                                     active={route().current('dashboard')}
                                 >
                                     Dashboard
                                 </NavLink>
-
                                 <NavLink
                                     href={route('chirps.index')}
                                     active={route().current('chirps.index')}
@@ -54,8 +52,12 @@ export default function AuthenticatedLayout({ header, children }) {
                                 >
                                     Employees
                                 </NavLink>
-
-
+                                <NavLink
+                                    href={route('employees.create')}
+                                    active={route().current('employees.create')}
+                                >
+                                    Create Employee
+                                </NavLink>
                             </div>
                         </div>
 
@@ -160,15 +162,15 @@ export default function AuthenticatedLayout({ header, children }) {
                         >
                             Dashboard
                         </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route('employees.create')}
+                            active={route().current('employees.create')}
+                        >
+                            Create Employee
+                        </ResponsiveNavLink>
                     </div>
 
-                     <ResponsiveNavLink href={route('chirps.index')} active={route().current('chirps.index')}>
-                       Chirps
-                    </ResponsiveNavLink>
-                    mobile screen
-
                     <div className="border-t border-gray-200 pb-1 pt-4">
-
                         <div className="px-4">
                             <div className="text-base font-medium text-gray-800">
                                 {user.name}

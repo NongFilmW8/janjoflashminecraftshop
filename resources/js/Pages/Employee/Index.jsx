@@ -2,7 +2,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 import { useState } from 'react';
 import { router } from '@inertiajs/react';
-// ป็นการนำเข้า router จาก Inertia.js ใช้สำหรับการนำทางและการจัดการการขอ
+// นำเข้า router จาก Inertia.js ใช้สำหรับการนำทางและการจัดการการขอ
 // HTTP ใน React ที่ใช้ Inertia.js
 export default function Index({ employees, query }) {
     const [search, setSearch] = useState(query || '');
@@ -60,6 +60,8 @@ export default function Index({ employees, query }) {
                                         <th className="px-6 py-3 text-left text-sm font-medium uppercase">Last Name</th>
                                         <th className="px-6 py-3 text-left text-sm font-medium uppercase">Gender</th>
                                         <th className="px-6 py-3 text-left text-sm font-medium uppercase">Birth Date</th>
+                                        <th className="px-6 py-3 text-left text-sm font-medium uppercase">Hire Date</th>
+                                        <th className="px-6 py-3 text-left text-sm font-medium uppercase">Profile Image</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-green-200">
@@ -69,9 +71,15 @@ export default function Index({ employees, query }) {
                                             <td className="px-6 py-4 text-sm text-gray-700">{employee.first_name}</td>
                                             <td className="px-6 py-4 text-sm text-gray-700">{employee.last_name}</td>
                                             <td className="px-6 py-4 text-sm text-gray-700">
-                                                {employee.gender === 'M' ? 'Male' : 'Female'}
+                                                {employee.gender === 'M' ? 'Male' : employee.gender === 'F' ? 'Female' : 'Other'}
                                             </td>
                                             <td className="px-6 py-4 text-sm text-gray-700">{employee.birth_date}</td>
+                                            <td className="px-6 py-4 text-sm text-gray-700">{employee.hire_date}</td>
+                                            <td className="px-6 py-4 text-sm text-gray-700">
+                                                {employee.profile_image && (
+                                                    <img src={employee.profile_image} alt="Profile" className="w-10 h-10 rounded-full" />
+                                                )}
+                                            </td>
                                         </tr>
                                     ))}
                                 </tbody>
@@ -91,7 +99,7 @@ export default function Index({ employees, query }) {
                                             : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                                     } ${!link.url && 'cursor-not-allowed opacity-50'}`}
                                 >
-                                    {link.label.replace('&laquo;', 'Previous').replace('&raquo;', 'Next')}
+                                    {link.label.replace('&laquo;', '').replace('&raquo;', '')}
                                 </button>
                             ))}
                         </div>

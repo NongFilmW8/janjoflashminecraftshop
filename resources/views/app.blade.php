@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
+        <title inertia>JanJoMinecraftShop</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -15,8 +15,20 @@
         @viteReactRefresh
         @vite(['resources/js/app.jsx', "resources/js/Pages/{$page['component']}.jsx"])
         @inertiaHead
+
     </head>
     <body class="font-sans antialiased">
         @inertia
+        <div class="container">
+        {{-- แสดงข้อความแจ้งเตือน --}}
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        {{-- เนื้อหาหลักของหน้า --}}
+        @yield('content')
+    </div>
     </body>
 </html>
